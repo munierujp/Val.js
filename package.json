@@ -1,0 +1,31 @@
+{
+  "name": "@munierujp/val",
+  "version": "1.0.0",
+  "description": "Val class wraps value",
+  "homepage": "https://github.com/munierujp/Val.js",
+  "bugs": {
+    "url": "https://github.com/munierujp/Val.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/munierujp/Val.js.git"
+  },
+  "scripts": {
+    "test": "mocha --require intelli-espower-loader test/**/*-test.js"
+  },
+  "files": [
+    "src/Val.js"
+  ],
+  "main": "src/Val.js",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.2.0",
+    "power-assert": "^1.6.0"
+  }
+}
