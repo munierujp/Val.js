@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/%40munierujp%2Fval.svg)](https://badge.fury.io/js/%40munierujp%2Fval)
+[![npm version](https://badge.fury.io/js/%40js-commons%2Fval.svg)](https://badge.fury.io/js/%40js-commons%2Fval)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # Val.js
@@ -6,18 +6,18 @@ Val class wraps value.
 
 ## Installation
 ```sh
-$ npm i @munierujp/val
+$ npm i @js-commons/val
 ```
 
 or
 
 ```sh
-$ yarn add @munierujp/val
+$ yarn add @js-commons/val
 ```
 
 ## Use in your script
 ```js
-const Val = require('@munierujp/val')
+const Val = require('@js-commons/val')
 ```
 
 ## Usage

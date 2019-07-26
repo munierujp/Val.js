@@ -1,17 +1,18 @@
 {
-  "name": "@munierujp/val",
+  "name": "@js-commons/val",
   "version": "1.0.0",
   "description": "Val class wraps value",
-  "homepage": "https://github.com/munierujp/Val.js",
+  "homepage": "https://github.com/js-commons/Val.js",
   "bugs": {
-    "url": "https://github.com/munierujp/Val.js/issues"
+    "url": "https://github.com/js-commons/Val.js/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/munierujp/Val.js.git"
+    "url": "https://github.com/js-commons/Val.js.git"
   },
   "scripts": {
-    "test": "mocha --require intelli-espower-loader test/**/*-test.js"
+    "test": "mocha --require intelli-espower-loader test/**/*-test.js",
+    "publish": "npm publish --access public"
   },
   "files": [
     "src/Val.js"
