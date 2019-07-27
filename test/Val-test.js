@@ -6,7 +6,7 @@ describe('Val', () => {
   describe('Val.empty()', () => {
     it('should return new empty instance', () => {
       const val = Val.empty()
-      assert.deepStrictEqual(val._, null)
+      assert.deepStrictEqual(val.$value, null)
     })
   })
 
@@ -14,46 +14,46 @@ describe('Val', () => {
     it('should return new instance which have value', () => {
       const value = 'foo'
       const val = Val.of(value)
-      assert.deepStrictEqual(val._, value)
+      assert.deepStrictEqual(val.$value, value)
     })
   })
 
-  describe('Val.filter(matcher)', () => {
-    describe('when value matches to condition', () => {
+  describe('Val.filter(callback)', () => {
+    describe('when value matches to callback function', () => {
       it('should return new instance which have same value', () => {
         const val = Val.of('foo')
         const filtered = val.filter(v => v.startsWith('f'))
         assert.notStrictEqual(filtered, val)
-        assert.deepStrictEqual(filtered._, val._)
+        assert.deepStrictEqual(filtered.$value, val.$value)
       })
     })
 
-    describe('when value does not matche to condition', () => {
+    describe('when value does not match to callback function', () => {
       it('should return new empty instance', () => {
         const val = Val.of('foo')
         const filtered = val.filter(v => v.startsWith('b'))
         assert.notStrictEqual(filtered, val)
-        assert.deepStrictEqual(filtered._, null)
+        assert.deepStrictEqual(filtered.$value, null)
       })
     })
   })
 
-  describe('Val.map(mapper)', () => {
+  describe('Val.map(callback)', () => {
     describe('when value is present', () => {
       it('should return new instance which have value applied mapping function', () => {
         const val = Val.of('foo')
-        const mapped = val.map(v => v + '_')
+        const mapped = val.map(v => v + '$value')
         assert.notStrictEqual(mapped, val)
-        assert.deepStrictEqual(mapped._, val._ + '_')
+        assert.deepStrictEqual(mapped.$value, val.$value + '$value')
       })
     })
 
     describe('when value is absent', () => {
       it('should return new empty instance', () => {
         const val = Val.empty()
-        const mapped = val.map(v => v + '_')
+        const mapped = val.map(v => v + '$value')
         assert.notStrictEqual(mapped, val)
-        assert.deepStrictEqual(mapped._, null)
+        assert.deepStrictEqual(mapped.$value, null)
       })
     })
   })
@@ -66,14 +66,14 @@ describe('Val', () => {
         val.ifPresent(v => {
           tmp = v
         })
-        assert.deepStrictEqual(tmp, val._)
+        assert.deepStrictEqual(tmp, val.$value)
       })
 
       it('should return new instance which have same value', () => {
         const val = Val.of('foo')
         const val2 = val.ifPresent(v => {})
         assert.notStrictEqual(val2, val)
-        assert.deepStrictEqual(val2._, val._)
+        assert.deepStrictEqual(val2.$value, val.$value)
       })
     })
 
@@ -91,7 +91,7 @@ describe('Val', () => {
         const val = Val.empty()
         const val2 = val.ifPresent(v => {})
         assert.notStrictEqual(val2, val)
-        assert.deepStrictEqual(val2._, null)
+        assert.deepStrictEqual(val2.$value, null)
       })
     })
   })
@@ -111,7 +111,7 @@ describe('Val', () => {
         const val = Val.of('foo')
         const val2 = val.ifAbsent(() => {})
         assert.notStrictEqual(val2, val)
-        assert.deepStrictEqual(val2._, val._)
+        assert.deepStrictEqual(val2.$value, val.$value)
       })
     })
 
@@ -130,17 +130,17 @@ describe('Val', () => {
         const val = Val.empty()
         const val2 = val.ifAbsent(() => {})
         assert.notStrictEqual(val2, val)
-        assert.deepStrictEqual(val2._, null)
+        assert.deepStrictEqual(val2.$value, null)
       })
     })
   })
 
-  describe('Val.or()', () => {
+  describe('Val.or(value)', () => {
     describe('when value is present', () => {
       it('should return value', () => {
         const val = Val.of('foo')
         const value = val.or('bar')
-        assert.deepStrictEqual(value, val._)
+        assert.deepStrictEqual(value, val.$value)
       })
     })
 
@@ -154,12 +154,12 @@ describe('Val', () => {
     })
   })
 
-  describe('Val.orGet()', () => {
+  describe('Val.orGet(callback)', () => {
     describe('when value is present', () => {
       it('should return value', () => {
         const val = Val.of('foo')
         const value = val.orGet(() => 'bar')
-        assert.deepStrictEqual(value, val._)
+        assert.deepStrictEqual(value, val.$value)
       })
     })
 
@@ -189,7 +189,7 @@ describe('Val', () => {
     })
   })
 
-  describe('Val.is()', () => {
+  describe('Val.is(value)', () => {
     describe('when value is equal to argument', () => {
       it('should return `true`', () => {
         const val = Val.of('foo')

@@ -1,6 +1,6 @@
 class Val {
   constructor (value) {
-    this._ = value
+    this.$value = value
   }
 
   static empty () {
@@ -11,42 +11,42 @@ class Val {
     return new this(value)
   }
 
-  filter (matcher) {
-    return (this.isPresent() && matcher(this._)) ? Val.of(this._) : Val.empty()
+  filter (callback) {
+    return (this.isPresent() && callback(this.$value)) ? Val.of(this.$value) : Val.empty()
   }
 
-  map (mapper) {
-    return this.isPresent() ? Val.of(mapper(this._)) : Val.empty()
+  map (callback) {
+    return this.isPresent() ? Val.of(callback(this.$value)) : Val.empty()
   }
 
   ifPresent (callback) {
     if (this.isPresent()) {
-      callback(this._)
+      callback(this.$value)
     }
-    return Val.of(this._)
+    return Val.of(this.$value)
   }
 
   ifAbsent (callback) {
     if (this.isAbsent()) {
       callback()
     }
-    return Val.of(this._)
+    return Val.of(this.$value)
   }
 
-  or (other) {
-    return this.isPresent() ? this._ : other
+  or (value) {
+    return this.isPresent() ? this.$value : value
   }
 
   orGet (callback) {
-    return this.isPresent() ? this._ : callback()
+    return this.isPresent() ? this.$value : callback()
   }
 
   matches (callback) {
-    return callback(this._)
+    return callback(this.$value)
   }
 
   is (value) {
-    return this._ === value
+    return this.$value === value
   }
 
   isPresent () {
@@ -54,7 +54,7 @@ class Val {
   }
 
   isAbsent () {
-    return this._ === null || this._ === undefined
+    return this.$value === null || this.$value === undefined
   }
 }
 
