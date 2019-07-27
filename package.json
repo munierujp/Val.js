@@ -11,7 +11,7 @@
     "url": "https://github.com/js-commons/Val.git"
   },
   "scripts": {
-    "test": "mocha --require intelli-espower-loader test/**/*-test.js",
+    "test": "mocha test/**/*-test.js",
     "publish": "npm publish --access public",
     "release:major": "npm version major",
     "release:minor": "npm version minor",
@@ -28,8 +28,6 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.2.0",
-    "power-assert": "^1.6.0"
+    "mocha": "^5.2.0"
   }
 }

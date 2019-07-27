@@ -1,5 +1,5 @@
 /* eslint-env mocha */
-const assert = require('power-assert')
+const assert = require('assert')
 const Val = require('../src/Val')
 
 describe('Val', () => {
