@@ -138,6 +138,17 @@ const value = val.orGet(() => 'bar')
 console.log(value) // bar
 ```
 
+#### Val.matches(callback)
+```js
+const val = Val.of('foo')
+console.log(val.matches(v => v === 'foo')) // true
+```
+
+```js
+const val = Val.of('foo')
+console.log(val.matches(v => v === 'bar')) // false
+```
+
 #### Val.is(value)
 ```js
 const val = Val.of('foo')

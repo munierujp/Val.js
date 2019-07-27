@@ -173,6 +173,22 @@ describe('Val', () => {
     })
   })
 
+  describe('Val.matches(callback)', () => {
+    describe('when value matches to callback function', () => {
+      it('should return `true`', () => {
+        const val = Val.of('foo')
+        assert.deepStrictEqual(val.matches(v => v === 'foo'), true)
+      })
+    })
+
+    describe('when value does not match to callback function', () => {
+      it('should return `false`', () => {
+        const val = Val.of('foo')
+        assert.deepStrictEqual(val.matches(v => v === 'bar'), false)
+      })
+    })
+  })
+
   describe('Val.is()', () => {
     describe('when value is equal to argument', () => {
       it('should return `true`', () => {

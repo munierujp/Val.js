@@ -41,6 +41,10 @@ class Val {
     return this.isPresent() ? this._ : callback()
   }
 
+  matches (callback) {
+    return callback(this._)
+  }
+
   is (value) {
     return this._ === value
   }
