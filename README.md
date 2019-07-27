@@ -118,6 +118,19 @@ const value = val.or('bar')
 console.log(value) // bar
 ```
 
+#### Val.orGet(callback)
+```js
+const val = Val.of('foo')
+const value = val.orGet(() => 'bar')
+console.log(value) // foo
+```
+
+```js
+const val = Val.empty()
+const value = val.orGet(() => 'bar')
+console.log(value) // bar
+```
+
 #### Val.is(value)
 ```js
 const val = Val.of('foo')

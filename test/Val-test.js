@@ -154,6 +154,25 @@ describe('Val', () => {
     })
   })
 
+  describe('Val.orGet()', () => {
+    describe('when value is present', () => {
+      it('should return value', () => {
+        const val = Val.of('foo')
+        const value = val.orGet(() => 'bar')
+        assert.deepStrictEqual(value, val._)
+      })
+    })
+
+    describe('when value is absent', () => {
+      it('should apply callback function and return its value', () => {
+        const val = Val.empty()
+        const other = 'bar'
+        const value = val.orGet(() => other)
+        assert.deepStrictEqual(value, other)
+      })
+    })
+  })
+
   describe('Val.is()', () => {
     describe('when value is equal to argument', () => {
       it('should return `true`', () => {

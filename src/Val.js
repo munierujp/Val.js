@@ -37,6 +37,10 @@ class Val {
     return this.isPresent() ? this._ : other
   }
 
+  orGet (callback) {
+    return this.isPresent() ? this._ : callback()
+  }
+
   is (value) {
     return this._ === value
   }
