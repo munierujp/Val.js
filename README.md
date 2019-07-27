@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/%40js-commons%2Fval.svg)](https://badge.fury.io/js/%40js-commons%2Fval)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-# Val.js
+# Val
 Val class wraps value.
 
 ## Installation
@@ -20,7 +20,13 @@ $ yarn add @js-commons/val
 const Val = require('@js-commons/val')
 ```
 
-## Usage
+or
+
+```js
+import Val from '@js-commons/val'
+```
+
+## API
 You can use below methods.
 
 ### Creation
@@ -105,6 +111,7 @@ console.log(val2) // { _: null }
 console.log(tmp) // bar
 ```
 
+### Terminal operation
 #### Val.or(other)
 ```js
 const val = Val.of('foo')
