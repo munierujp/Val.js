@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/%40js-commons%2Fval.svg)](https://badge.fury.io/js/%40js-commons%2Fval)
+[![tested by Mocha](https://img.shields.io/badge/tested%20by-Mocha-%238d6748)](https://mochajs.org/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # Val
